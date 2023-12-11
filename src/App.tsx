@@ -1,13 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Accordion from './Components/Accordion/Accordion';
+import {Rating} from './Components/Rating/Rating';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>11111</h1>
-    </div>
-  );
+function  App() {
+    return (
+        <div>
+            <PageTitle title={'This is App Title'}/>
+            <PageTitle title={'My friends'}/>
+            Article 1
+            <Rating value ={3}/>
+            <Accordion titleValue={'Меню 1'} collapsed={true}/>
+            <Accordion titleValue={'Меню 2'} collapsed={false}/>
+            Article 2
+            <Rating value ={4}/>
+        </div>
+    );
+}
+type PageTitlePropsType = {
+    title: string
+}
+function PageTitle (props:PageTitlePropsType) {
+    console.log('PageTitle rendering')
+    return <h1>{props.title}</h1>
 }
 
 export default App;
